@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "a8a311b3-ff34-4cad-8bd7-0aea6a0e2ef6",
+		"name": "transaction logs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generate access token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Basic c2FtcGxlLXNlcnZpY2U6ZjJPQmQwVWFOVHpraEVKSndWamY="
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://uaa-free-for-all.dev.apps.cs.sgp.dbs.com/oauth/token?grant_type=client_credentials",
+					"protocol": "https",
+					"host": [
+						"uaa-free-for-all",
+						"dev",
+						"apps",
+						"cs",
+						"sgp",
+						"dbs",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://travel-zuul-service.dev.apps.cs.sgp.dbs.com/transaction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "Bearer Access-Token",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://travel-zuul-service.dev.apps.cs.sgp.dbs.com/transaction/hotel_transactions"
+			},
+			"response": []
+		}
+	]
+}
